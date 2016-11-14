@@ -61,7 +61,8 @@ func main() {
     fmt.Println(raw_data);
     sort.Sort(raw_data);
     fmt.Println(raw_data);
-    sort.Sort(sort.Reverse(raw_data));
+    //sort.Sort(sort.Reverse(raw_data));
+    sort.Sort(Reverse{raw_data});
 
     fmt.Println(raw_data);
 
@@ -70,12 +71,12 @@ func main() {
 
 }
 
-type IntsReverse struct {
-        sort.Interface
+type Reverse struct {
+    sort.Interface
 }
 
-func (reverse IntsReverse) Less(i, j int) bool {
-        return reverse.Interface.Less(j, i);
+func (reverse Reverse) Less(i, j int) bool {
+    return reverse.Interface.Less(j, i);
 }
 
 
