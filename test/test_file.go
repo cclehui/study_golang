@@ -62,7 +62,7 @@ func main() {
     sort.Sort(raw_data);
     fmt.Println(raw_data);
     //sort.Sort(sort.Reverse(raw_data));
-    sort.Sort(Reverse{raw_data});
+    sort.Sort(Reverse{raw_data})
 
     fmt.Println(raw_data);
 

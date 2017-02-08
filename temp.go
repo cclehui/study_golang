@@ -3,8 +3,8 @@ package main
 import (
         "fmt"
         "strings"
-        "os"
-        "bufio"
+        //"os"
+        //"bufio"
         //"strconv"
         //"io/ioutil"
         "./model/util"
@@ -24,10 +24,25 @@ func main() {
 
         var read_in = make([]byte, 5);
 
-        if _, e := string_reader.Read(read_in);e == nil {
-                fmt.Println(read_in);
+        var new_string = make([]byte, 5);
+
+        var e interface{};
+
+        for {
+            n := 0;
+            if n, e = string_reader.Read(read_in);e == nil {
+                fmt.Println(read_in, e);
                 fmt.Println(string(read_in));
+                new_string = append(new_string, read_in...);
+            }
+
+            if n < 1 {
+                break;
+            }
+
         }
+
+        fmt.Println(string(new_string));
 
 
 }
