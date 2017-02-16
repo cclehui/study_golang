@@ -1,24 +1,30 @@
 axxxxxxxxxxxxx
 
 {{.user_list}}
-{{ .test_data["name"] }}
+{{index .test_data "name" }}
 {{ccTest "nice"}}
-<table>
-    <tr>
-        <th>id</th>
-        <th>名字</th>
-        <th>年龄</th>
-        <th>生日</th>
-    </tr>
 
-    {{ range $i, $user := .user_list }}
-        {{if isRightType $user}}
-        <tr>
-            <td>{{$i}}</td>
-            <td>{{$user}}</td>
-            <td>{{.test_data}}</td>
-        </tr>
-        {{end}}
-    {{end}}
+<html>
+    <head> </head>
+    <body>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>名字</th>
+                <th>年龄</th>
+                <th>生日</th>
+            </tr>
 
-</table>
+            {{ range $i, $user := .user_list }}
+                {{if isRightType $user}}
+                <tr>
+                    <td>{{$i}}</td>
+                    <td>{{index $user "name"}}</td>
+                    <td>{{.test_data}}</td>
+                </tr>
+                {{end}}
+            {{end}}
+
+        </table>
+    </body>
+</html>

@@ -51,12 +51,12 @@ func main() {
         os.Exit(0) 
     }
 
-    tmpl := template.New("test").Funcs(func_map)
+    tmpl := template.New("test").Funcs(func_map)//添加模板函数
     tmpl = template.Must(tmpl.Parse(string(tmpl_content_bytes)))
     tmpl.Execute(os.Stdout, data)
 
     for _, st := range tmpl.Templates() {
-        fmt.Println("template_name \t" + st.Name()) 
+        fmt.Println("out template:template_name \t" + st.Name()) 
     }
 
     //tmpl.ExecuteTemplate(os.Stdout, "test", data)
