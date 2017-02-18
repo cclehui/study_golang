@@ -5,6 +5,7 @@ import(
     "strconv"
     "bytes"
     "encoding/json"
+    "time"
     //"os"
 )
 
@@ -15,6 +16,8 @@ func randStr(len int) string {
 
     const base int = 97;
     result := bytes.Buffer{};
+
+    rand.Seed(time.Now().UnixNano())
 
     for i := 0; i < len; i++ {
         tempInt := base + rand.Intn(26);
