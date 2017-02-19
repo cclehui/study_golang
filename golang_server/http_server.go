@@ -3,9 +3,12 @@ package main
 import (
     "fmt"
     "io"
+    "os"
     "log"
     "time"
+    "syscall"
     "net/http"
+    "os/signal"
 )
 
 func main() {
@@ -15,6 +18,7 @@ func main() {
 
     fmt.Println("server listen on " + addr)
 
+    //启动server
     log.Fatal(http.ListenAndServe(addr, nil))
 
 }
