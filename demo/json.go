@@ -36,6 +36,9 @@ func main() {
         data[strconv.Itoa(i)] = randStr(i);
     }
 
+    //github上一个开源的json处理库
+    //https://github.com/bitly/go-simplejson
+
     fmt.Println(data);
 
     //encoder := json.NewEncoder(os.Stdout);
