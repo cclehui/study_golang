@@ -54,7 +54,10 @@ func clientTest(count int) {
 
 				if err2 != nil {
 					log.Printf("client:%d, 调用rpc方法失败, %v\n", i, err2)
-					return
+					time.Sleep(time.Second * 1)
+					//测试server端挂掉后重启
+					continue
+					//return
 				}
 
 				log.Printf("client:%d, 调用rpc方法成功, server reply:%v\n", i, reply.GetMessage())
