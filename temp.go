@@ -14,6 +14,9 @@ var f = func(i int) {
 
 func main() {
 
+	fmt.Printf("%04d\n", 1)
+	return
+
 	var f = func(i int) {
 		fmt.Print(i)
 
