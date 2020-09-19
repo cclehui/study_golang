@@ -7,7 +7,8 @@ import (
 	"sync"
 )
 
-//trace 数据查看方法 go tool trace trace.out
+//trace 数据查看方法 命令行查看 go tool trace trace.out
+//trace 数据查看方法 网页查看 go tool trace -http=":6060" ./trace.log
 
 func mockSendToServer(url string) {
 	fmt.Printf("server url: %s\n", url)
